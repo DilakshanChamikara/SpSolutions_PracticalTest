@@ -1,0 +1,33 @@
+package Problems;
+
+import java.text.CompactNumberFormat;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Vector;
+
+public class P4 {
+
+	public static void main(String[] args) {
+		Vector<String> array = new Vector<>();
+		
+		array.add("50");
+		array.add("2");
+		array.add("1");
+		array.add("9");
+
+	}
+	
+	static void largePossibleNumber(Vector<String> array) {
+		Collections.sort(array, new Comparator<String>() {
+
+			@Override
+			public int compare(String i, String j) {
+				String ij = i + j;
+				String ji = j + i;
+				return ij.compareTo(ji) > 0 ? -1 : 1;
+			}
+		});
+	}
+
+}
